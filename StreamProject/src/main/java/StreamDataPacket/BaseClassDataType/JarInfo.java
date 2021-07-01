@@ -9,6 +9,8 @@ public class JarInfo {
     public String jarClass;
     public String inputType;
     public String outputType;
+    public String type;
+    public Long windowSize;
 
     public JarInfo(JSONObject jsonObject) throws Exception{
         this.jarID = jsonObject.getString("JarID");
@@ -17,6 +19,8 @@ public class JarInfo {
         this.jarClass = jsonObject.getString("JarClass");
         this.inputType = jsonObject.getString("InputType");
         this.outputType = jsonObject.getString("OutputType");
+        this.type = jsonObject.getString("Type");
+        this.windowSize = jsonObject.getLong("WindowSize");
     }
 
     @Override

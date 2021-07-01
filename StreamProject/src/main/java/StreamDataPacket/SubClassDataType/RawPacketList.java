@@ -1,7 +1,7 @@
 package StreamDataPacket.SubClassDataType;
 
 import StreamDataPacket.DataType;
-import edu.thss.entity.RawDataPacket;
+import ty.pub.RawDataPacket;
 
 public class RawPacketList extends DataType {
     public RawDataPacket streamData;

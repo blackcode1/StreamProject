@@ -1,13 +1,12 @@
 package StreamTest;
 
-import StreamDataPacket.BaseClassDataType.TransPacketRely.TransPacketDecoder;
-import StreamDataPacket.BaseClassDataType.TransPacketRely.TransPacketDeserializationSchema;
+import StreamDataPacket.BaseClassDataType.TransPacketRely.*;
 import com.alibaba.fastjson.JSONObject;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import ty.pub.TransPacket;
 
 import java.util.Properties;
 

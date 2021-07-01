@@ -8,13 +8,12 @@ package cn.edu.thss.rcsdk;
 import StreamDataPacket.BaseClassDataType.TaskState;
 import cn.edu.thss.rcinterface.RealTimeInterface;
 import com.alibaba.fastjson.JSONObject;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 public abstract class RealTimeAlg<T> implements RealTimeInterface<T> {
     private FileOutputStream _out;

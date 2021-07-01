@@ -3,9 +3,8 @@ package StreamTest;
 import StreamDataPacket.BaseClassDataType.TaskState;
 import cn.edu.thss.rcsdk.RealTimeAlg;
 import com.alibaba.fastjson.JSONObject;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
-
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 import java.util.*;
 

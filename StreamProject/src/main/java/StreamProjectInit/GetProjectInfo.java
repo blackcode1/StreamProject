@@ -16,6 +16,7 @@ public class GetProjectInfo {
             JSONObject projectJson = JSONObject.parseObject(args[0]);
             rcProject = new RCProject(projectJson);
         } catch (Exception e) {
+            e.printStackTrace();
             RunProject.logStr = StreamLog.createExLog(e, "ERROR", "项目信息解析异常");
         }
 

@@ -7,18 +7,20 @@ import StreamDataPacket.DataType;
 import StreamDataPacket.DataTypeChange.MapDatatype2JS;
 import StreamDataPacket.DataTypeChange.MapDatatype2PDP;
 import StreamDataPacket.DataTypeChange.MapDatatype2TP;
+import StreamDataPacket.SubClassDataType.DBStore.DBStore;
 import StreamDataPacket.SubClassDataType.JsonList;
 import StreamTest.MyRMQSinkOpts;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.MessageProperties;
 import edu.thss.entity.ParsedDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer;
 import org.apache.flink.streaming.connectors.rabbitmq.RMQSink;
 import org.apache.flink.streaming.connectors.rabbitmq.common.RMQConnectionConfig;
+import ty.pub.TransPacket;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -115,7 +117,14 @@ public class StreamSink {
             }
         }
         else if(streamDataset.dataSourceType.equals("IOTDB")){
-            resultStream.addSink(new IotDBBatchSink(streamDataset.dataSourceIp, streamDataset.dataSourceUser, streamDataset.dataSourcePassword));
+            resultStream.keyBy(new KeySelector<DataType, String>() {
+                @Override
+                public String getKey(DataType dataType) throws Exception {
+                    DBStore dbStore = (DBStore) dataType;
+
+                    return dbStore.getTableName();
+                }
+            }).addSink(new IotDBBatchSink(streamDataset.dataSourceIp, streamDataset.dataSourceUser, streamDataset.dataSourcePassword));
         }
         else if(streamDataset.dataSourceType.equals("HBase")){
             resultStream.addSink(new HBaseSink(streamDataset.dataSourceIp, streamDataset.dataSourceUser, streamDataset.dataSourcePassword));

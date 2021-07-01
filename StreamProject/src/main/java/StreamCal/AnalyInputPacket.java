@@ -5,8 +5,8 @@ import StreamDataPacket.SubClassDataType.JsonList;
 import StreamDataPacket.SubClassDataType.RawPacketList;
 import StreamDataPacket.SubClassDataType.TransPacketList;
 import com.alibaba.fastjson.JSONObject;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,4 +59,15 @@ public class AnalyInputPacket {
         }
     }
 
+    public static Long getTime(DataType dataType)throws Exception{
+        if(dataType.streamDataType.equals("JSONObject")){
+            return ((JsonList) dataType).streamData.getLong("timestamp");
+        }
+        else if(dataType.streamDataType.equals("TransPacket")){
+            return ((TransPacketList) dataType).streamData.getTimestamp();
+        }
+        else {
+            return System.currentTimeMillis();
+        }
+    }
 }

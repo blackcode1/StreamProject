@@ -7,13 +7,12 @@ import StreamDataPacket.SubClassDataType.LogList;
 import StreamProjectInit.StreamLog;
 import cn.edu.thss.rcsdk.RealTimeAlg;
 import com.alibaba.fastjson.JSONObject;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

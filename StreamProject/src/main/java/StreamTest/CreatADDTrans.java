@@ -1,7 +1,6 @@
 package StreamTest;
 
 import StreamDataPacket.BaseClassDataType.TransPacketRely.TransPacketSerializationSchema;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.RichFlatMapFunction;
 import org.apache.flink.configuration.Configuration;
@@ -9,6 +8,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer;
 import org.apache.flink.util.Collector;
+import ty.pub.TransPacket;
 
 import java.util.ArrayList;
 import java.util.HashMap;

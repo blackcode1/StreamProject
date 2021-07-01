@@ -6,13 +6,13 @@ import StreamDataPacket.DataTypeChange.*;
 import StreamDataPacket.DataType;
 import StreamDataPacket.BaseClassDataType.TransPacketRely.TransPacketDeserializationSchema;
 import edu.thss.entity.ParsedDataPacket;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.rabbitmq.RMQSource;
 import org.apache.flink.streaming.connectors.rabbitmq.common.RMQConnectionConfig;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 public class RabbitMQSource {
 

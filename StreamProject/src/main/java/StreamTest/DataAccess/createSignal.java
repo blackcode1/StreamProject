@@ -37,8 +37,9 @@ public class createSignal {
         DataStream<String> rdataStream = see.fromCollection(s);
 
         rdataStream.print();
-        rdataStream.addSink(new FlinkKafkaProducer<String>("192.168.3.32:9092", "decodeSignal", new SimpleStringSchema()));
+        rdataStream.addSink(new FlinkKafkaProducer<String>("192.168.3.32:9092", "GHDATA", new SimpleStringSchema()));
         //rdataStream.addSink(new FlinkKafkaProducer<String>("192.168.71.18:12092", "Signal", new SimpleStringSchema()));
+       // rdataStream.addSink(new FlinkKafkaProducer<String>("192.168.71.19:2093", "Signal", new SimpleStringSchema()));
         see.execute();
     }
 }

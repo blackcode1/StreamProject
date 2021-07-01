@@ -6,30 +6,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+public class TransPacket implements Serializable{
 
-public class TransPacket implements Serializable {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 104852240502245447L;
-	private long timestamp;
-	private String deviceId;
-	private String ip;
-	private String msgType;
-	private String rawDataId;
-	private Map<String, String> baseInfoMap;
-	private Map<String, Map<Long, String>> workStatusMap;
-	private Map<String, Map<Long, String>> calculationStatusMap;
 
 	public TransPacket() {
-		this.baseInfoMap = new LinkedHashMap();
-		this.workStatusMap = new LinkedHashMap();
-		this.calculationStatusMap = new LinkedHashMap();
+		this.baseInfoMap = new LinkedHashMap<String, String>();
+		this.workStatusMap = new LinkedHashMap<String, Map<Long, String>>();
 	}
-
-	public TransPacket(long timestamp, String deviceId, String ip, Map<String, String> baseInfoMap, Map<String, Map<Long, String>> workStatusMap) {
+	
+	public TransPacket(long timestamp, String deviceId, String ip, Map<String, String> baseInfoMap,
+			Map<String, Map<Long, String>> workStatusMap) {
+		super();
 		this.timestamp = timestamp;
 		this.deviceId = deviceId;
 		this.ip = ip;
@@ -37,40 +28,43 @@ public class TransPacket implements Serializable {
 		this.workStatusMap = workStatusMap;
 	}
 
+
+
 	public String getDeviceId() {
-		return this.deviceId;
+		return deviceId;
 	}
 
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 	}
 
-	public String getRawDataId() {
-		return this.rawDataId;
-	}
+	/**
+	 * 鏃堕棿鎴�
+	 */
+	private long timestamp;
 
-	public void setRawDataId(String rawDataId) {
-		this.rawDataId = rawDataId;
-	}
+	/**
+	 * 宸ュ喌鏁版嵁鐨勫彂閫佽澶�
+	 */
+	private String deviceId;
 
-	public String getMsgType() {
-		return this.msgType;
-	}
+	/**
+	 * 鏁版嵁鏉ユ簮ip
+	 */
+	private String ip;
 
-	public void setMsgType(String msgType) {
-		this.msgType = msgType;
-	}
+	/**
+	 * 鏁版嵁鎶ユ枃鍩虹淇℃伅 key = 妯℃澘鍙傛暟锛圱emplatePara锛夌殑鍙傛暟缂栧彿parameterID value = 妯℃澘鍙傛暟瀵瑰簲鐨勬暟鍊�
+	 */
+	private Map<String, String> baseInfoMap;
 
-	public Map<String, Map<Long, String>> getCalculationStatusMap() {
-		return this.calculationStatusMap;
-	}
-
-	public void setCalculationStatusMap(Map<String, Map<Long, String>> calculationStatusMap) {
-		this.calculationStatusMap = calculationStatusMap;
-	}
-
+	/**
+	 * 宸ュ喌鏁版嵁淇℃伅 key = 妯℃澘鍙傛暟锛圱emplatePara锛夌殑鍙傛暟缂栧彿parameterID value = 妯℃澘鍙傛暟瀵瑰簲鐨勬暟鍊�
+	 */
+	private Map<String, Map<Long, String>> workStatusMap;
+	
 	public long getTimestamp() {
-		return this.timestamp;
+		return timestamp;
 	}
 
 	public void setTimestamp(long timestamp) {
@@ -78,7 +72,7 @@ public class TransPacket implements Serializable {
 	}
 
 	public String getIp() {
-		return this.ip;
+		return ip;
 	}
 
 	public void setIp(String ip) {
@@ -86,7 +80,7 @@ public class TransPacket implements Serializable {
 	}
 
 	public Map<String, String> getBaseInfoMap() {
-		return this.baseInfoMap;
+		return baseInfoMap;
 	}
 
 	public void setBaseInfoMap(Map<String, String> baseInfoMap) {
@@ -94,64 +88,29 @@ public class TransPacket implements Serializable {
 	}
 
 	public Map<String, Map<Long, String>> getWorkStatusMap() {
-		return this.workStatusMap;
+		return workStatusMap;
 	}
 
 	public void setWorkStatusMap(Map<String, Map<Long, String>> workStatusMap) {
 		this.workStatusMap = workStatusMap;
 	}
-
+	
 	public void addBaseInfo(String workStatus, String value) {
-		this.baseInfoMap.put(workStatus, value);
+		baseInfoMap.put(workStatus, value);
 	}
 
 	public void addWorkStatus(String workStatus, long time, String value) {
-		if (this.workStatusMap.containsKey(workStatus)) {
-			((Map)this.workStatusMap.get(workStatus)).put(time, value);
+		if (workStatusMap.containsKey(workStatus)) {
+			workStatusMap.get(workStatus).put(time, value);
 		} else {
-			Map<Long, String> tmp = new LinkedHashMap();
+			Map<Long, String> tmp = new LinkedHashMap<Long, String>();
 			tmp.put(time, value);
-			this.workStatusMap.put(workStatus, tmp);
+			workStatusMap.put(workStatus, tmp);
 		}
-
 	}
 
-	public Iterator<TransPacket.WorkStatusRecord> getWorkStatusMapIter() {
-		return new TransPacket.NestedIterator();
-	}
-
-	public Iterator<Entry<String, String>> getBaseInfoMapIter() {
-		return this.baseInfoMap.entrySet().iterator();
-	}
-
-	public class NestedIterator implements Iterator<TransPacket.WorkStatusRecord> {
-		Iterator<Entry<String, Map<Long, String>>> outter;
-		Entry<String, Map<Long, String>> current;
-		Iterator<Entry<Long, String>> inner;
-
-		public NestedIterator() {
-			this.outter = TransPacket.this.workStatusMap.entrySet().iterator();
-			this.current = null;
-			this.inner = null;
-		}
-
-		public boolean hasNext() {
-			return this.outter.hasNext() || this.inner != null && this.inner.hasNext();
-		}
-
-		public TransPacket.WorkStatusRecord next() {
-			if (this.outter.hasNext() && (this.current == null || !this.inner.hasNext())) {
-				this.current = (Entry)this.outter.next();
-				this.inner = ((Map)this.current.getValue()).entrySet().iterator();
-			}
-
-			if (this.inner.hasNext()) {
-				Entry<Long, String> tmp = (Entry)this.inner.next();
-				return TransPacket.this.new WorkStatusRecord((String)this.current.getKey(), (Long)tmp.getKey(), (String)tmp.getValue());
-			} else {
-				return null;
-			}
-		}
+	public Iterator<Entry<String, String>> getBaseInfoMapIter(){
+		return baseInfoMap.entrySet().iterator();
 	}
 
 	public class WorkStatusRecord {
@@ -160,7 +119,7 @@ public class TransPacket implements Serializable {
 		String value;
 
 		public String getWorkStatusId() {
-			return this.workStatusId;
+			return workStatusId;
 		}
 
 		public void setWorkStatusId(String workStatusId) {
@@ -168,7 +127,7 @@ public class TransPacket implements Serializable {
 		}
 
 		public long getTime() {
-			return this.time;
+			return time;
 		}
 
 		public void setTime(long time) {
@@ -176,7 +135,7 @@ public class TransPacket implements Serializable {
 		}
 
 		public String getValue() {
-			return this.value;
+			return value;
 		}
 
 		public void setValue(String value) {
@@ -184,9 +143,12 @@ public class TransPacket implements Serializable {
 		}
 
 		public WorkStatusRecord(String workStatusId, long time, String value) {
+			super();
 			this.workStatusId = workStatusId;
 			this.time = time;
 			this.value = value;
 		}
+
 	}
+
 }

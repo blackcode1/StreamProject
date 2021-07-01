@@ -3,7 +3,8 @@ package StreamTest.StorageTest;
 import org.apache.iotdb.session.Session;
 import org.apache.iotdb.tsfile.file.metadata.enums.TSDataType;
 import org.apache.iotdb.tsfile.file.metadata.enums.TSEncoding;
-import org.apache.iotdb.tsfile.write.record.RowBatch;
+//import org.apache.iotdb.tsfile.write.record.RowBatch;
+import org.apache.iotdb.tsfile.write.record.Tablet;
 import org.apache.iotdb.tsfile.write.schema.MeasurementSchema;
 import org.apache.iotdb.tsfile.write.schema.Schema;
 
@@ -14,30 +15,33 @@ public class sink2IotdbTest {
 
     public static void main(String[] args) throws Exception {
 
-        Session session = new Session("192.168.3.31", 6667, "root", "root");
+        Session session = new Session("223.99.13.54", 17167, "root", "root");
+        //session = new Session("192.168.70.171", 6667, "root", "root");
         session.open();
 
         Long startT = System.currentTimeMillis();
-        Schema schema = new Schema();
-        schema.registerMeasurement(new MeasurementSchema("U16AS2Pressure", TSDataType.DOUBLE, TSEncoding.RLE));
-        schema.registerMeasurement(new MeasurementSchema("U16CvPressure", TSDataType.DOUBLE, TSEncoding.RLE));
+        List<MeasurementSchema> schema = new ArrayList<>();
+        schema.add(new MeasurementSchema("Channel27", TSDataType.INT32, TSEncoding.RLE));
+        //schema.add(new MeasurementSchema("Channel25", TSDataType.INT32, TSEncoding.RLE));
+        Tablet tablet = new Tablet("root.J053102.T001.V4.group27", schema, 20);
 
-        RowBatch rowBatch = schema.createRowBatch("root.QD2000.Q200.Head.Carriage12", 100000);
-
-        long[] timestamps = rowBatch.timestamps;
-        Object[] values = rowBatch.values;
-        double[] sensor = (double[]) values[0];
-        double[] sensor2 = (double[]) values[1];
-        for(int i = 0; i < 100000; i++){
-            int row = rowBatch.batchSize++;
+        long[] timestamps = tablet.timestamps;
+        Object[] values = tablet.values;
+        int[] sensor = (int[]) values[0];
+      //  int[] sensor2 = (int[]) values[1];
+        for(int i = 0; i < 20; i++){
+            int row = tablet.rowSize++;
             timestamps[row] = 1598583001000L+i;
             sensor[i] = i;
-            sensor2[i] = i;
+           // sensor2[i] = i;
         }
-
-        session.insertBatch(rowBatch);
-
         Long endT = System.currentTimeMillis();
+        System.out.println(endT-startT);
+        //for(int i = 0; i < 64; i++){
+        session.insertTablet(tablet);
+        //}
+
+        endT = System.currentTimeMillis();
         System.out.println(endT-startT);
         session.close();
 

@@ -12,7 +12,7 @@ public class ReadKafkaJson31 {
 
     public static FlinkKafkaConsumer<String> init(String gropID, String topicName) {
         Properties kafkaConfig = new Properties();
-        kafkaConfig.setProperty("bootstrap.servers", "192.168.71.18:12092");
+        kafkaConfig.setProperty("bootstrap.servers", "223.99.13.54:16592");
         kafkaConfig.setProperty("group.id", gropID);
 
         kafkaConfig.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -28,9 +28,10 @@ public class ReadKafkaJson31 {
         StreamExecutionEnvironment see = StreamExecutionEnvironment.getExecutionEnvironment();
 
         see.setParallelism(1);
-        FlinkKafkaConsumer<String> kafkaConsumer = init("qz0701", "EngineHearts");//EngineHeart
+        FlinkKafkaConsumer<String> kafkaConsumer = init("qz0701", "DecodeTest2");//EngineHeart
         //kafkaConsumer.setStartFromLatest();
-        //kafkaConsumer.setStartFromTimestamp(System.currentTimeMillis() - 3*3600*1000);
+        kafkaConsumer.setStartFromEarliest();
+       // kafkaConsumer.setStartFromTimestamp(System.currentTimeMillis() - 3*3600*1000);
         DataStream<String> kafkaSource = see.addSource(kafkaConsumer).map(new MapFunction<String, String>() {
             @Override
             public String map(String s) throws Exception {
@@ -40,7 +41,7 @@ public class ReadKafkaJson31 {
         kafkaSource.print();
 
 
-        FlinkKafkaConsumer<String> kafkaConsumer2 = init("qz070", "decodeStore");//FailureDiag_SF，FailureInfo_SF decodeStore
+        /*FlinkKafkaConsumer<String> kafkaConsumer2 = init("qz070", "decodeStore");//FailureDiag_SF，FailureInfo_SF decodeStore
         //kafkaConsumer2.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData teststore decodeInputAll
         kafkaConsumer2.setStartFromLatest();//从最新数据开始读
         //kafkaConsumer2.setStartFromTimestamp(System.currentTimeMillis() - 3*3600*1000);
@@ -56,9 +57,9 @@ public class ReadKafkaJson31 {
                 return s;
             }
         });
-        kafkaSource2.print();
+        kafkaSource2.print();*/
 
-        FlinkKafkaConsumer<String> kafkaConsumer3 = init("qz011", "ZDData");//FailureDiag_SF，FailureInfo_SF decodeStore
+        /*FlinkKafkaConsumer<String> kafkaConsumer3 = init("qz011", "ZDData");//FailureDiag_SF，FailureInfo_SF decodeStore
         //kafkaConsumer3.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData testdecode streamInput2
         kafkaConsumer3.setStartFromLatest();//从最新数据开始读
         //kafkaConsumer3.setStartFromTimestamp(System.currentTimeMillis() - 1*3600*1000);
@@ -68,9 +69,9 @@ public class ReadKafkaJson31 {
                 return "QYData:"+s;
             }
         });
-        kafkaSource3.print();
+        kafkaSource3.print();*/
 
-        FlinkKafkaConsumer<String> kafkaConsumer4 = init("qz011", "decodeInputAll");//FailureDiag_SF，FailureInfo_SF decodeStore
+        /*FlinkKafkaConsumer<String> kafkaConsumer4 = init("qz011", "decodeInputAll");//FailureDiag_SF，FailureInfo_SF decodeStore
         //kafkaConsumer3.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData testdecode streamInput2
         kafkaConsumer4.setStartFromLatest();//从最新数据开始读
         //kafkaConsumer3.setStartFromTimestamp(System.currentTimeMillis() - 1*3600*1000);
@@ -80,7 +81,7 @@ public class ReadKafkaJson31 {
                 return "decodeInputAll:"+s;
             }
         });
-        kafkaSource4.print();
+        kafkaSource4.print();*/
 
         see.execute();
 

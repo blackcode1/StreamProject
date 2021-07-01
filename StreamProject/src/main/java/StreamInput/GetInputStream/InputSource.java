@@ -17,8 +17,10 @@ public class InputSource {
         String user = streamDataset.dataSourceUser;
         String pw = streamDataset.dataSourcePassword;
         Integer offset = streamDataset.dataSetOffset;
+        Long startt = streamDataset.startTime;
         if(streamDataset.dataSourceType.equals("KAFKA")){
-            return KafkaSource.getKafkaStream(env, dataType, ip, port, groupID, topic, pid, datasetID, offset);
+            //return KafkaSource.getKafkaStream(env, dataType, ip, port, groupID, topic, pid, datasetID, offset);
+            return KafkaSource.getKafkaStream(env, dataType, ip, port, groupID, topic, pid, datasetID, startt);
         }
         else if(streamDataset.dataSourceType.equals("RMQ")){
             return RabbitMQSource.getRabbitMQStream(env, dataType, ip, port, groupID, topic, pid, datasetID, user, pw);

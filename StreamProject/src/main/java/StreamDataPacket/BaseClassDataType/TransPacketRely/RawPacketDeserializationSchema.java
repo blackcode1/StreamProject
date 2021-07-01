@@ -1,10 +1,11 @@
 package StreamDataPacket.BaseClassDataType.TransPacketRely;
 
-import edu.thss.entity.RawDataPacket;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
-
+import ty.pub.RawDataPacket;
+import ty.pub.RawPacketDecoder;
+import ty.pub.TransPacket;
 
 import java.io.IOException;
 

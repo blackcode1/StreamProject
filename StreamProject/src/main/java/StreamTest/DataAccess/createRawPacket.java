@@ -101,6 +101,6 @@ public class createRawPacket {
     }
 
     public static void main(String[] args) throws Exception {
-        ghdata();
+        qydata();
     }
 }

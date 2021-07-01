@@ -15,6 +15,12 @@ import java.util.List;
 public class IOTDBSinkTest {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment see = StreamExecutionEnvironment.getExecutionEnvironment();
+        Long time = 1600307387410L;
+        DBStore store = new DBStore("root.QD2000.Q200.Head", new ArrayList<>());
+        DBSQL dbsql = new DBSQL("Carriage12", time, new ArrayList<>());
+        dbsql.addtConditon(new DBCondition("U16AS2Pressure", "Double", "517"));
+        store.addSql(dbsql);
+        /*
         DBStore store = new DBStore("root.QD2000.Q200.Head", new ArrayList<>(), true);
         Long time = 1600307387410L;
         for(int i = 0; i < 5; i++){
@@ -26,7 +32,7 @@ public class IOTDBSinkTest {
                 dbsql.addtConditon(condition);
             }
             store.addSql(dbsql);
-        }
+        }*/
         List<DataType> list = new ArrayList<>();
         list.add((DataType) store);
 

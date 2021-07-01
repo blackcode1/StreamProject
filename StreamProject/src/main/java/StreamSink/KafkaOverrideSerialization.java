@@ -7,8 +7,8 @@ import StreamDataPacket.SubClassDataType.JsonList;
 import StreamDataPacket.SubClassDataType.ParsedDataPacketList;
 import StreamDataPacket.SubClassDataType.TransPacketList;
 import edu.thss.entity.ParsedDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.streaming.util.serialization.KeyedSerializationSchema;
+import ty.pub.TransPacket;
 
 import static StreamDataPacket.pressStr.compress;
 

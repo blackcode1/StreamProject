@@ -23,16 +23,6 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <filters>
-                <filter>
-                  <artifact>*:*</artifact>
-                  <excludes>
-                    <exclude>META-INF/*.SF</exclude>
-                    <exclude>META-INF/*.DSA</exclude>
-                    <exclude>META-INF/*.RSA</exclude>
-                  </excludes>
-                </filter>
-              </filters>
               <transformers>
                 <transformer>
                   <mainClass>StreamProjectInit.RunProject</mainClass>
@@ -44,14 +34,5 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>com.microsoft.sqlserver</groupId>
-      <artifactId>sqljdbc4</artifactId>
-      <version>4.0</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/lib/sqljdbc4.jar</systemPath>
-    </dependency>
-  </dependencies>
 </project>
 

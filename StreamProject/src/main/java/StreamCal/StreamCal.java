@@ -7,10 +7,9 @@ import cn.edu.thss.rcsdk.RealTimeAlg;
 import StreamDataPacket.BaseClassDataType.StreamTask;
 import StreamDataPacket.BaseClassDataType.TaskState;
 import StreamDataPacket.DataType;
+import cn.edu.thss.rcsdk.StreamAlg;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.cache.LoadingCache;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.api.common.state.*;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
@@ -25,6 +24,8 @@ import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,7 +42,7 @@ public class StreamCal {
             private transient ValueState<TaskInfoPacket> taskInfoPacket;
             private transient MapState<String, Map<String, List<Map<String, String>>>> allTaskVar;//device_id, dataset_id, row, key, value
             private transient MapState<String, Boolean> liveTask;
-            private transient Map<String, RealTimeAlg> userAlg;
+            private transient Map<String, StreamAlg> userAlg;
             private transient String projectDataType;
             private transient String projectID;
             private transient MapState<String, Map<String, Boolean>> userAlgInit;
@@ -81,7 +82,7 @@ public class StreamCal {
                 liveTaskDescriptor.setQueryable("liveTaskName");
                 liveTask = getRuntimeContext().getMapState(liveTaskDescriptor);
 
-                userAlg = new HashMap<String, RealTimeAlg>();
+                userAlg = new HashMap<String, StreamAlg>();
 
                 ParameterTool pt = (ParameterTool) getRuntimeContext().getExecutionConfig().getGlobalJobParameters();
                 projectDataType = pt.get("StreamDataType");
@@ -99,14 +100,14 @@ public class StreamCal {
 
             public void cal(StreamTask streamTask, String deviceID, List<String> gkIDList,
                             RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
-                            Collector<DataType> collector, Context context) throws Exception{
+                            Collector<DataType> collector, Context context, Long time) throws Exception{
                 List<String> condition = ModifyMemory.getCondition(gkIDList, streamTask.condition);
                 Map<String, List<Map<String, String>>> taskvar = ModifyMemory.getTaskvar(allTaskVar, deviceID);
                 List<TaskState> publicStateList = ModifyMemory.getPublicState(allTaskState, streamTask, deviceID, taskInfoPacket.value());
                 TaskState privateState = ModifyMemory.getPrivateState(allTaskState, streamTask, deviceID);
                 Boolean isLiveTask = true;
-                RealTimeAlg rti = null;
-                if(streamTask.taskState == 1){
+                StreamAlg rti = null;
+                if(streamTask.taskState == 1){//0终止。1运行。-1测试
                     rti = GetUserAlg.getUserAlg(userAlg, taskInfoPacket.value().jarInfoMap, streamTask.jarID);
                 }
 
@@ -116,7 +117,7 @@ public class StreamCal {
                         || !userAlgInit.get(streamTask.taskID).containsKey(deviceID)
                         || !userAlgInit.get(streamTask.taskID).get(deviceID))){
                     isLiveTask = rti.init(rawInput, transInput, jsonInput,
-                            condition, taskvar, publicStateList, privateState);
+                            condition, taskvar, deviceID, publicStateList, privateState, time);
                 }
                 else if(streamTask.taskState == -1){
                     isLiveTask = false;
@@ -133,8 +134,8 @@ public class StreamCal {
                 }
                 liveTask.put(streamTask.taskID, isLiveTask);
                 if(isLiveTask && streamTask.taskState == 1){
-                    List<DataType> res = PacketCalResult.packetCalResult(projectID, outputType, rti, streamTask.taskID, streamTask.timeout,
-                            rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, streamTask.outputTopic);
+                    List<DataType> res = PacketCalResult.packetCalResult(projectID, outputType, rti, streamTask.taskID, deviceID, streamTask.timeout,
+                            rawInput, transInput, jsonInput, condition, taskvar, time, publicStateList, privateState, streamTask.outputTopic);
                     if(res != null){
                         for(int i = 0; i < res.size(); i++){
                             if(res.get(i).streamDataType.equals("Log")){
@@ -166,6 +167,8 @@ public class StreamCal {
 
             @Override
             public void processElement(DataType dataType, Context context, Collector<DataType> collector) throws Exception {
+                //实时计算流：kafka中数据
+                //广播流：任务数据、任务配置、定时信息
                 try {
                     if(taskInfoPacket.value() == null){
                         taskInfoPacket.update(new TaskInfoPacket());
@@ -205,14 +208,15 @@ public class StreamCal {
                         RawDataPacket rawInput = AnalyInputPacket.getRawpacket(dataType);
                         TransPacket transInput = AnalyInputPacket.getTranspacket(dataType);
                         JSONObject jsonInput = AnalyInputPacket.getJsonInput(dataType);
+                        Long time = AnalyInputPacket.getTime(dataType);
 
                         List<StreamTask> taskMap = taskInfoPacket.value().taskList;
                         for(StreamTask streamTask: taskMap){
                             if(dataType.isSignal && IsActiveTask.isActiveSignal(datasetID, taskInfoPacket.value(), streamTask)){
-                                cal(streamTask, deviceID, gkIDList, rawInput, transInput, jsonInput, collector, context);
+                                cal(streamTask, deviceID, gkIDList, rawInput, transInput, jsonInput, collector, context, time);
                             }
                             else if(IsActiveTask.isActive(datasetID, deviceID, gkIDList, taskInfoPacket.value(), streamTask)){
-                                cal(streamTask, deviceID, gkIDList, rawInput, transInput, jsonInput, collector, context);
+                                cal(streamTask, deviceID, gkIDList, rawInput, transInput, jsonInput, collector, context, time);
                             }
                             else if(!IsActiveTask.isLive(taskInfoPacket.value(), streamTask)){
                                 liveTask.put(streamTask.taskID, false);
@@ -222,24 +226,27 @@ public class StreamCal {
                     }
                     else if(dataType.streamDataType.equals("onTime")) {
                         List<StreamTask> taskMap = taskInfoPacket.value().taskList;
+                        Long time = AnalyInputPacket.getTime(dataType);
                         for (StreamTask streamTask : taskMap) {
                             if (streamTask.useOnTimeSource && IsActiveTask.isLive(taskInfoPacket.value(), streamTask)) {
                                 List<String> deviceList = streamTask.deviceList;
                                 if(deviceList.size() != 0 && deviceList.get(0).equals("*") && userAlgInit.contains(streamTask.taskID)){
+                                    //不过滤，对所有设备触发计算-》初始化完成就可以被广播触发
                                     for(Map.Entry<String, Boolean> entry1: userAlgInit.get(streamTask.taskID).entrySet()){
                                         if(entry1.getValue() || streamTask.taskState == -1){
                                             String deviceID = entry1.getKey();
-                                            cal(streamTask, deviceID, new ArrayList<String>(), null, null, null, collector, context);
+                                            cal(streamTask, deviceID, new ArrayList<String>(), null, null, null, collector, context, time);
                                         }
                                     }
                                 }
                                 else if(deviceList.size() != 0 && !deviceList.get(0).equals("*")){
+                                    //过滤，仅对deviceList中的设备触发计算，触发deviceList中所有在当前并发服务器下的计算
                                     for(int i = 0; i < deviceList.size(); i++){
                                         String deviceID = deviceList.get(i);
                                         Integer current_key = Integer.valueOf(context.getCurrentKey());
                                         Integer device_key = Integer.valueOf(deviceID) % 100;
                                         if(current_key == device_key){
-                                            cal(streamTask, deviceID, new ArrayList<String>(), null, null, null, collector, context);
+                                            cal(streamTask, deviceID, new ArrayList<String>(), null, null, null, collector, context, time);
                                         }
                                     }
                                 }

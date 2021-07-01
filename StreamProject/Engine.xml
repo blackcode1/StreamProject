@@ -1,11 +1,12 @@
 <root>
 	<flinkpath>/home/ubuntu/flink-1.9.1</flinkpath>
-	<flinkurl>http://192.168.3.34:8081</flinkurl>
+	<flinkurl>http://192.168.3.33:8081</flinkurl>
 	<flinkjarpath>/home/ubuntu/jar/StreamProject-1.0-SNAPSHOT.jar </flinkjarpath>
 	<flinksavepath>file://home/ubuntu/save</flinksavepath>
 	<engineurl>http://192.168.3.32:8000</engineurl>
 	<xmlrootpath>/home/ubuntu/engine/xml/</xmlrootpath>
 	<enginesavepath>/home/ubuntu/engine.db</enginesavepath>
+	<stateurl>192.168.3.32,192.168.3.33,192.168.3.34</stateurl>
 	<hearttime>60000</hearttime>
 	<datasets>
 		<dataset type="stream" use="test">
@@ -21,6 +22,8 @@
 			<topic>LocalTest</topic>
 			<dataid>JSONObject</dataid>
 			<group>asd</group>
+			<offset>0</offset>
+			<starttime>0</starttime>
 		</dataset>
 		<dataset type="stream" use="log">
 			<uuid>log</uuid>
@@ -35,6 +38,8 @@
 			<topic>EngineHeart</topic>
 			<dataid>JSONObject</dataid>
 			<group>asd</group>
+			<offset>0</offset>
+			<starttime>0</starttime>
 		</dataset>
 		<dataset type="relation">
 			<uuid>conflist</uuid>

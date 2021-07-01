@@ -9,10 +9,11 @@ import StreamDataPacket.SubClassDataType.ParsedDataPacketList;
 import StreamDataPacket.SubClassDataType.TransPacketList;
 import StreamProjectInit.StreamLog;
 import cn.edu.thss.rcsdk.RealTimeAlg;
+import cn.edu.thss.rcsdk.StreamAlg;
 import com.alibaba.fastjson.JSONObject;
 import edu.thss.entity.ParsedDataPacket;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,36 +21,38 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 public class PacketCalResult {
-    public static List<DataType> packetCalResult(String pid, String outputType, RealTimeAlg rti, String taskID, Integer timeout,
-                                                 RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
-                                                 List<String> condition, Map<String, List<Map<String, String>>> taskvar,
+    public static List<DataType> packetCalResult(String pid, String outputType, StreamAlg rti, String taskID, String deviceID,
+                                                 Integer timeout, RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
+                                                 List<String> condition, Map<String, List<Map<String, String>>> taskvar, Long time,
                                                  List<TaskState> publicStateList, TaskState privateState, String topic)throws Exception{
 
         if(outputType.equals("JSONObject")){
-            return packetJsonResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic);
+            return packetJsonResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic, deviceID, time);
         }
         else if(outputType.equals("TransPacket")){
-            return packetTransResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic);
+            return packetTransResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic, deviceID, time);
         }
-        else if(outputType.equals("DBStore")){
-            return packetDBStoreResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic);
+        else if(outputType.equals("DBStore") || outputType.equals("Table")){
+            return packetDBStoreResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic, deviceID, time);
         }
         else if(outputType.equals("ParsedDataPacket")){
-            return packetDBStoreResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic);
+            return packetDBStoreResult(pid, rti, taskID, timeout, rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState, topic, deviceID, time);
         }
         return null;
     }
 
-    public static List<DataType> packetJsonResult(String projectID, RealTimeAlg rti, String taskID, Integer timeout,
+    public static List<DataType> packetJsonResult(String projectID, StreamAlg rti, String taskID, Integer timeout,
                                     RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
                                     List<String> condition, Map<String, List<Map<String, String>>> taskvar,
-                                    List<TaskState> publicStateList, TaskState privateState, String topic) throws Exception{
+                                    List<TaskState> publicStateList, TaskState privateState, String topic,
+                                                  String deviceID, Long time) throws Exception{
         List<DataType> res = new ArrayList<DataType>();
 
         final ExecutorService exec = Executors.newFixedThreadPool(1);
         Callable<List<JSONObject>> call = new Callable< List<JSONObject>>(){
             public List<JSONObject> call() throws Exception{
-                List<JSONObject> resJson = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState);
+                List<JSONObject> resJson =
+                        rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, deviceID, publicStateList, privateState, time);
                 return resJson;
             }
         };
@@ -68,7 +71,6 @@ public class PacketCalResult {
                         DataType resDataType = (DataType) new JsonList(resJson.get(i), taskID, topic);
                         res.add(resDataType);
                     }
-
                 }
             }
         }catch(TimeoutException ex){
@@ -85,16 +87,17 @@ public class PacketCalResult {
         return res;
     }
 
-    public static List<DataType> packetTransResult(String projectID, RealTimeAlg rti, String taskID, Integer timeout,
+    public static List<DataType> packetTransResult(String projectID, StreamAlg rti, String taskID, Integer timeout,
                                     RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
                                     List<String> condition, Map<String, List<Map<String, String>>> taskvar,
-                                    List<TaskState> publicStateList, TaskState privateState, String topic)throws Exception{
+                                    List<TaskState> publicStateList, TaskState privateState, String topic,
+                                                   String deviceID, Long time)throws Exception{
         List<DataType> res = new ArrayList<DataType>();
 
         final ExecutorService exec = Executors.newFixedThreadPool(1);
         Callable<List<TransPacket>> call = new Callable< List<TransPacket>>(){
             public List<TransPacket> call() throws Exception{
-                List<TransPacket> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState);
+                List<TransPacket> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, deviceID, publicStateList, privateState, time);
                 return resTrans;
             }
         };
@@ -130,16 +133,17 @@ public class PacketCalResult {
         return res;
     }
 
-    public static List<DataType> packetDBStoreResult(String projectID, RealTimeAlg rti, String taskID, Integer timeout,
+    public static List<DataType> packetDBStoreResult(String projectID, StreamAlg rti, String taskID, Integer timeout,
                                                    RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
                                                    List<String> condition, Map<String, List<Map<String, String>>> taskvar,
-                                                   List<TaskState> publicStateList, TaskState privateState, String topic)throws Exception{
+                                                   List<TaskState> publicStateList, TaskState privateState, String topic,
+                                                     String deviceID, Long time)throws Exception{
         List<DataType> res = new ArrayList<DataType>();
 
         final ExecutorService exec = Executors.newFixedThreadPool(1);
         Callable<List<DBStore>> call = new Callable< List<DBStore>>(){
             public List<DBStore> call() throws Exception{
-                List<DBStore> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState);
+                List<DBStore> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, deviceID, publicStateList, privateState, time);
                 return resTrans;
             }
         };
@@ -167,16 +171,17 @@ public class PacketCalResult {
         return res;
     }
 
-    public static List<DataType> packetPDPResult(String projectID, RealTimeAlg rti, String taskID, Integer timeout,
+    public static List<DataType> packetPDPResult(String projectID, StreamAlg rti, String taskID, Integer timeout,
                                                      RawDataPacket rawInput, TransPacket transInput, JSONObject jsonInput,
                                                      List<String> condition, Map<String, List<Map<String, String>>> taskvar,
-                                                     List<TaskState> publicStateList, TaskState privateState, String topic)throws Exception{
+                                                     List<TaskState> publicStateList, TaskState privateState, String topic,
+                                                 String deviceID, Long time)throws Exception{
         List<DataType> res = new ArrayList<DataType>();
 
         final ExecutorService exec = Executors.newFixedThreadPool(1);
         Callable<List<ParsedDataPacket>> call = new Callable< List<ParsedDataPacket>>(){
             public List<ParsedDataPacket> call() throws Exception{
-                List<ParsedDataPacket> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, publicStateList, privateState);
+                List<ParsedDataPacket> resTrans = rti.callAlg(rawInput, transInput, jsonInput, condition, taskvar, deviceID, publicStateList, privateState, time);
                 return resTrans;
             }
         };

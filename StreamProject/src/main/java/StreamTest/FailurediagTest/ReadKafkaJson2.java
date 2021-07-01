@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
@@ -44,33 +45,31 @@ public class ReadKafkaJson2 {
         kafkaSource.print();
 
 
-        FlinkKafkaConsumer<String> kafkaConsumer2 = init("qz070", "decodeInputAll");//FailureDiag_SF，FailureInfo_SF decodeStore
-        //kafkaConsumer2.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData teststore decodeInputAll
-        kafkaConsumer2.setStartFromLatest();//从最新数据开始读
-        kafkaConsumer2.setStartFromTimestamp(System.currentTimeMillis() - 1*3600*1000);
+       /* FlinkKafkaConsumer<String> kafkaConsumer2 = init("qz070", "teststore");//FailureDiag_SF，FailureInfo_SF decodeStore
+        kafkaConsumer2.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData teststore decodeInputAll
+       // kafkaConsumer2.setStartFromLatest();//从最新数据开始读
+        //kafkaConsumer2.setStartFromTimestamp(System.currentTimeMillis() - 1*3600*1000);
         DataStream<String> kafkaSource2 = see.addSource(kafkaConsumer2).flatMap(new FlatMapFunction<String, String>() {
             @Override
             public void flatMap(String s, Collector<String> collector) throws Exception {
-                JSONObject jsonObject = JSONObject.parseObject(s);
-                if(jsonObject.getString("outputtopic").equals("GHData")){
-                    collector.collect(s);
-                }
+                collector.collect(s);
+
             }
 
         });
         kafkaSource2.print();
 
-        FlinkKafkaConsumer<String> kafkaConsumer3 = init("qz011", "GHData");//FailureDiag_SF，FailureInfo_SF decodeStore
+        FlinkKafkaConsumer<String> kafkaConsumer3 = init("qz011", "testrc");//FailureDiag_SF，FailureInfo_SF decodeStore
         //kafkaConsumer3.setStartFromEarliest();//从最早数据（7天前）开始读 streamOutput1 QYData testdecode streamInput2
         kafkaConsumer3.setStartFromLatest();//从最新数据开始读
-        kafkaConsumer3.setStartFromTimestamp(System.currentTimeMillis() - 1*3600*1000);
+        //kafkaConsumer3.setStartFromTimestamp(System.currentTimeMillis() - 2*3600*1000);
         DataStream<String> kafkaSource3 = see.addSource(kafkaConsumer3).map(new MapFunction<String, String>() {
             @Override
             public String map(String s) throws Exception {
                 return "QYData:"+s;
             }
         });
-        kafkaSource3.print();
+        kafkaSource3.print();*/
 
         see.execute();
 

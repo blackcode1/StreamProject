@@ -20,6 +20,7 @@ public class StreamUnion {
             (DataStream<DataType> inputStream, DataStream<DataType> broadcastStream, RCProject project) throws Exception{
         final String pid = project.projectID;
         DataStream<DataType> bcStream = broadcastStream.process(new ProcessFunction<DataType, DataType>() {
+            //任务信息，任务配置数据（taskVarSmall， taskVar），广播，错误日志
             @Override
             public void processElement(DataType dataType, Context context, Collector<DataType> collector) throws Exception {
                 if(dataType.streamDataType.equals("taskVarSmall") || dataType.streamDataType.equals("Log")){

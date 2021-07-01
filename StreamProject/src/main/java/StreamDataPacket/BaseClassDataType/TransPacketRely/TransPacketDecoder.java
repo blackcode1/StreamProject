@@ -1,8 +1,7 @@
 package StreamDataPacket.BaseClassDataType.TransPacketRely;
 
-import edu.thss.entity.TransPacket;
 import org.apache.kafka.common.serialization.Deserializer;
-
+import ty.pub.TransPacket;
 
 import java.io.Serializable;
 import java.util.Map;

@@ -113,7 +113,7 @@ public class RunProject {
         DataStream<DataType> broadcastStream = GetBroadcastStream.getBroadCastStrem(env, rcProject, engineUrl);
         KeyedStream<DataType, String> calStream = StreamUnion.streamUnion(t1, broadcastStream, rcProject);
         DataStream<DataType> resultStream = StreamCal.streamCalTask(calStream);
-        //resultStream.print();
+        resultStream.print();
         StreamSink.resultSink(resultStream, rcProject.outputDataSet);
 
         SingleOutputStreamOperator<DataType> s = (SingleOutputStreamOperator<DataType>) resultStream;

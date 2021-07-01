@@ -50,7 +50,7 @@ public class CreateSimpleInput {
         });
         resStream.print();
         resStream.addSink(new FlinkKafkaProducer<String>
-                ("192.168.3.32:9092", "streamOutput1", new SimpleStringSchema()));
+                ("192.168.3.32:9092", "teststoreb", new SimpleStringSchema()));
         see.execute();
     }
 }

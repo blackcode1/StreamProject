@@ -20,6 +20,7 @@ public class StreamDataset {
     public String rmqExchange;
     public Integer rmqDelay;
     public String dataBase;
+    public Long startTime;
 
     public StreamDataset(JSONObject jsonObject) throws Exception{
         this.datasetID = jsonObject.getString("DataSetID");
@@ -36,6 +37,7 @@ public class StreamDataset {
         this.rmqExchange = jsonObject.getString("RMQExchange");
         this.rmqDelay = jsonObject.getIntValue("RMQDelay");
         this.dataBase = jsonObject.getString("DataBaseName");
+        this.startTime = jsonObject.getLong("StartTime");
     }
 
     public StreamDataset(Element e)throws Exception {
@@ -46,6 +48,8 @@ public class StreamDataset {
         this.dataType = (e.element("dataid")==null?null:e.element("dataid").getTextTrim());
         this.rmqExchange = (e.element("rmqexchange")==null?null:e.element("rmqexchange").getTextTrim());
         this.rmqDelay = (e.element("rmqdelay")==null?null: Integer.valueOf(e.element("rmqdelay").getTextTrim()));
+
+        this.startTime = (e.element("starttime")==null?this.dataSetOffset: Long.valueOf(e.element("starttime").getTextTrim()));
 
         Element e2 = e.element("datasource");
         this.dataSourceID = e2.element("uuid").getTextTrim();

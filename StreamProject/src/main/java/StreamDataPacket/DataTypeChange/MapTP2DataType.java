@@ -4,8 +4,8 @@ import StreamDataPacket.DataType;
 import StreamDataPacket.SubClassDataType.LogList;
 import StreamDataPacket.SubClassDataType.TransPacketList;
 import StreamProjectInit.StreamLog;
-import edu.thss.entity.TransPacket;
-import org.apache.flink.api.common.functions.MapFunction;;
+import org.apache.flink.api.common.functions.MapFunction;
+import ty.pub.TransPacket;
 
 public class MapTP2DataType implements MapFunction<TransPacket, DataType>{
     public String pid;

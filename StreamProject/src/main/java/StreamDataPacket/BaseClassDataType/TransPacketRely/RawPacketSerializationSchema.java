@@ -1,8 +1,9 @@
 package StreamDataPacket.BaseClassDataType.TransPacketRely;
 
-import edu.thss.entity.RawDataPacket;
 import org.apache.flink.api.common.serialization.SerializationSchema;
-
+import ty.pub.BeanUtil;
+import ty.pub.RawDataPacket;
+import ty.pub.TransPacket;
 
 public class RawPacketSerializationSchema implements SerializationSchema<RawDataPacket> {
 

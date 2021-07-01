@@ -4,6 +4,7 @@ import StreamDataPacket.BaseClassDataType.StreamTask;
 import StreamDataPacket.BaseClassDataType.TaskState;
 import StreamDataPacket.SubClassDataType.TaskInfoPacket;
 import cn.edu.thss.rcsdk.RealTimeAlg;
+import cn.edu.thss.rcsdk.StreamAlg;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -24,7 +25,7 @@ public class ModifyMemory {
     }
 
     public static void modifyJarInfo
-            (Map<String, RealTimeAlg> userAlg, MapState<String, Map<String, Boolean>> userAlgInit, TaskInfoPacket taskInfo) throws Exception {
+            (Map<String, StreamAlg> userAlg, MapState<String, Map<String, Boolean>> userAlgInit, TaskInfoPacket taskInfo) throws Exception {
         for(StreamTask entry: taskInfo.taskList) {
             if(entry.taskState == 0 && userAlg.containsKey(entry.jarID)){
                 userAlg.remove(entry.jarID);

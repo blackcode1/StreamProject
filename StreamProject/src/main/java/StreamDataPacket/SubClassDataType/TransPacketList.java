@@ -1,7 +1,7 @@
 package StreamDataPacket.SubClassDataType;
 
 import StreamDataPacket.DataType;
-import edu.thss.entity.TransPacket;
+import ty.pub.TransPacket;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

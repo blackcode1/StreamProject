@@ -6,18 +6,13 @@ import StreamDataPacket.SubClassDataType.DBStore.DBSQL;
 import StreamDataPacket.SubClassDataType.DBStore.DBStore;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
-import org.apache.iotdb.service.rpc.thrift.TSExecuteBatchStatementResp;
 import org.apache.iotdb.session.Session;
 import org.apache.iotdb.tsfile.file.metadata.enums.TSDataType;
 import org.apache.iotdb.tsfile.file.metadata.enums.TSEncoding;
 import org.apache.iotdb.tsfile.utils.Binary;
-import org.apache.iotdb.tsfile.write.record.RowBatch;
-import org.apache.iotdb.tsfile.write.schema.MeasurementSchema;
-import org.apache.iotdb.tsfile.write.schema.Schema;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import org.apache.iotdb.tsfile.write.record.Tablet;
+import org.apache.iotdb.tsfile.write.schema.MeasurementSchema;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,36 +45,36 @@ public class IotDBBatchSink extends RichSinkFunction<DataType> {
         }
     }
 
-    public RowBatch createRowBatch(DBSQL dbsql, int batchSize, String tableName){
+    public Tablet createRowBatch(DBSQL dbsql, int batchSize, String tableName){
         List<DBCondition> dbConditions = dbsql.getConditons();
-        Schema schema = new Schema();
+        List<MeasurementSchema> schemas = new ArrayList<>();
         for (DBCondition condition : dbConditions) {
             if (condition.getDataType().equals("Int")) {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.INT32, TSEncoding.RLE));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.INT32, TSEncoding.RLE));
             } else if (condition.getDataType().equals("Long")) {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.INT64, TSEncoding.RLE));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.INT64, TSEncoding.RLE));
             } else if (condition.getDataType().equals("Float")) {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.FLOAT, TSEncoding.GORILLA));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.FLOAT, TSEncoding.GORILLA));
             } else if (condition.getDataType().equals("Double")) {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.DOUBLE, TSEncoding.GORILLA));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.DOUBLE, TSEncoding.GORILLA));
             } else if (condition.getDataType().equals("Boolean")) {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.BOOLEAN, TSEncoding.RLE));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.BOOLEAN, TSEncoding.RLE));
             } else {
-                schema.registerMeasurement(new MeasurementSchema(condition.getColName(), TSDataType.TEXT, TSEncoding.PLAIN));
+                schemas.add(new MeasurementSchema(condition.getColName(), TSDataType.TEXT, TSEncoding.PLAIN));
             }
         }
         String table = tableName;
         if (dbsql.getRowKey() != null) {
             table = table + "." + dbsql.getRowKey();
         }
-        RowBatch rowBatch = schema.createRowBatch(table, batchSize);
-        return rowBatch;
+        Tablet tablet = new Tablet(table, schemas, batchSize);
+        return tablet;
     }
 
-    public void setRowBatchValue(RowBatch rowBatch, List<DBCondition> dbConditions, Long time){
-        long[] timestamps = rowBatch.timestamps;
-        Object[] values = rowBatch.values;
-        int row = rowBatch.batchSize++;
+    public void setRowBatchValue(Tablet tablet, List<DBCondition> dbConditions, Long time){
+        long[] timestamps = tablet.timestamps;
+        Object[] values = tablet.values;
+        int row = tablet.rowSize++;
         timestamps[row] = time;
         for (int j = 0; j < dbConditions.size(); j++) {
             DBCondition condition = dbConditions.get(j);
@@ -111,43 +106,38 @@ public class IotDBBatchSink extends RichSinkFunction<DataType> {
             DBStore dbStore = (DBStore) value;
             if (dbStore.getBatchStore()) {
                 List<DBSQL> dbsqls = dbStore.getSqls();
-                RowBatch rowBatch = createRowBatch(dbsqls.get(0), dbsqls.size(), dbStore.getTableName());
+               // RowBatch rowBatch = createRowBatch(dbsqls.get(0), dbsqls.size(), dbStore.getTableName());
+                Tablet tablet = createRowBatch(dbsqls.get(0), dbsqls.size(), dbStore.getTableName());
                 for (DBSQL dbsql: dbsqls) {
-                    setRowBatchValue(rowBatch, dbsql.getConditons(), dbsql.getTimeStamp());
+                    setRowBatchValue(tablet, dbsql.getConditons(), dbsql.getTimeStamp());
                 }
                 if(session == null){
                     session = new Session(ip, port, user, password);
                     session.open();
                 }
                 try {
-                    TSExecuteBatchStatementResp resp = session.insertBatch(rowBatch);
-                    System.out.println("完成一包存储，返回结果:" + resp.toString());
+                    session.insertTablet(tablet);
                 } catch (Exception e){
-                    System.out.println(e.toString());
                     session = new Session(ip, port, user, password);
                     session.open();
-                    TSExecuteBatchStatementResp resp = session.insertBatch(rowBatch);
-                    System.out.println("完成一包存储，返回结果:" + resp.toString());
+                    session.insertTablet(tablet);
                 }
 
             }
             else {
                 for(DBSQL dbsql: dbStore.getSqls()){
-                    RowBatch rowBatch = createRowBatch(dbsql, 1, dbStore.getTableName());
-                    setRowBatchValue(rowBatch, dbsql.getConditons(), dbsql.getTimeStamp());
+                    Tablet tablet = createRowBatch(dbsql, 1, dbStore.getTableName());
+                    setRowBatchValue(tablet, dbsql.getConditons(), dbsql.getTimeStamp());
                     if(session == null){
                         session = new Session(ip, port, user, password);
                         session.open();
                     }
                     try {
-                        TSExecuteBatchStatementResp resp = session.insertBatch(rowBatch);
-                        System.out.println("完成一包存储，返回结果:" + resp.toString());
+                        session.insertTablet(tablet);
                     } catch (Exception e){
-                        System.out.println(e.toString());
                         session = new Session(ip, port, user, password);
                         session.open();
-                        TSExecuteBatchStatementResp resp = session.insertBatch(rowBatch);
-                        System.out.println("完成一包存储，返回结果:" + resp.toString());
+                        session.insertTablet(tablet);
                     }
                 }
             }

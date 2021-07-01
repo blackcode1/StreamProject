@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/StreamSink/RichRMQSink.java" description="public class RichRMQSink extends RMQSink&lt;String&gt; {" line="2" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8dac36d3-80f5-4c01-a03f-426c49a29374" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="StreamProject" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/GetUserAlg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding>
+                <element signature="method#getUserAlg#0;class#GetUserAlg#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/WindowAlg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/ReadKafkaJson2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/TaskState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/UserJarTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+              <folding>
+                <element signature="method#init#0;class#UserJarTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamProjectInit/RunProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2014">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/StorageTest/IOTDBSinkTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/GetTaskInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/GetBroadcastStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/BroadcastSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2128">
+              <caret line="124" column="60" selection-start-line="124" selection-start-column="60" selection-end-line="124" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/StreamDataSource/OnTimeTestSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/WaterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/readIotdb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/CreateInput.java" />
+        <option value="$PROJECT_DIR$/sum.py" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/PythonTest/RunPythonStr.java" />
+        <option value="$PROJECT_DIR$/pytest.py" />
+        <option value="$PROJECT_DIR$/pytest2.py" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/readState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/ReadKafkaJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamDataPacket/pressStr.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamDataPacket/DataTypeChange/MapJS2Datatype.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamSink/KafkaOverrideSerialization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/StorageTest/PDPIOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/KafakTimeTest2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/KafakTimeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/GetTaskInfoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamInput/StreamUnion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/IsActiveTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/DataAccess/createRawPacket.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamSink/IotDBBatchSink.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/ReadKafkaJson3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/DataAccess/createSignal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/DataAccess/createRawPacket2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/ReadKafkaJson31.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/StorageTest/sink2IotdbTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/CreateSimpleInput.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamInput/GetInputStream/InputSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamInput/GetInputStream/KafkaSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/ReadKafkaJson2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/StreamDataset.java" />
+        <option value="$PROJECT_DIR$/Engine.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamProjectInit/GetProjectInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamSink/StreamSink.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/thss/rcinterface/rcinterface/RealTimeInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/StreamAlg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/BatchAlg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/JarInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/ModifyMemory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/StreamCal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/SAlgFromBA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamProjectInit/RunProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/AnalyInputPacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/PacketCalResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/StorageTest/IOTDBSinkTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/fuelconsume/ReadKafkaJson2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamTest/fuelconsume/CreatKafkaJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/WindowAlg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StreamCal/GetUserAlg.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="StreamProject" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="StreamProject" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="StreamProject" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="StreamProject" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectId" id="1uiTbdUDmMjMRe1ZvsI8TJjEQiW" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thss" type="462c0819:PsiDirectoryNode" />
+              <item name="rcinterface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thss" type="462c0819:PsiDirectoryNode" />
+              <item name="rcsdk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamCal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamDataPacket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamDataPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="BaseClassDataType" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamDataPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="DataTypeChange" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamDataPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="SubClassDataType" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamDataSource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamInput" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamInput" type="462c0819:PsiDirectoryNode" />
+              <item name="GetBroadStream" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamInput" type="462c0819:PsiDirectoryNode" />
+              <item name="GetInputStream" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamProjectInit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamSink" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamTest" type="462c0819:PsiDirectoryNode" />
+              <item name="FailurediagTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamTest" type="462c0819:PsiDirectoryNode" />
+              <item name="fuelconsume" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FlinkProject\StreamProject" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FlinkProject\StreamProject\src\main\java\cn\edu\thss" />
+      <recent name="D:\FlinkProject\StreamProject\src\main\java\cn\edu\thss\rcinterface" />
+      <recent name="D:\FlinkProject\StreamProject\src\main\java\StreamTest\StorageTest" />
+      <recent name="D:\FlinkProject\StreamProject" />
+      <recent name="D:\FlinkProject\StreamProject\src\main\java\StreamTest\DataAccess" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.thss.rcsdk" />
+      <recent name="StreamTest.fuelconsume" />
+      <recent name="StreamTest" />
+      <recent name="StreamTest.FailurediagTest" />
+      <recent name="StreamTest.DataAccess" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="StreamDataPacket" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.RunProject">
+    <configuration name="CreatKafkaJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.fuelconsume.CreatKafkaJson" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.fuelconsume.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateRMQJson" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.CreateRMQJson" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateSimpleInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.FailurediagTest.CreateSimpleInput" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.FailurediagTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IOTDBSinkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.StorageTest.IOTDBSinkTest" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.StorageTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadKafkaJson2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.fuelconsume.ReadKafkaJson2" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.fuelconsume.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadKafkaJson2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest.FailurediagTest.ReadKafkaJson2" />
+      <module name="StreamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamTest.FailurediagTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunProject" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamProjectInit.RunProject" />
+      <module name="StreamProject" />
+      <option name="PROGRAM_PARAMETERS" value="{'StreamDataSetList':[{'DataSourcePort':'9092','DataSetGroupID':'fuelconsumption','DataSetType':'StreamData','Query':'','DataSourcePassword':'','EndTime':'-1','SourceID':'qykafka','StartTime':'1619625600000','DataSetID':'fuelinput','DataBaseName':'','DataSourceIp':'192.168.3.32','DataSourceType':'KAFKA','DataSourceUser':'','DataType':'JSONObject','DataSetTopic':'fuelinput','DataSourceID':'qykafka'}],'CheckpointTime':'10','Para':'1','StreamDataType':'JSONObject','OutputDataSet':{'DataSourcePort':'9092','DataSetGroupID':'fuelconsumption','DataSetType':'StreamData','Query':'','DataSourcePassword':'','EndTime':'-1','SourceID':'qykafka','StartTime':'-1','DataSetID':'fueloutput','DataBaseName':'','DataSourceIp':'192.168.3.32','DataSourceType':'KAFKA','DataSourceUser':'','DataType':'JSONObject','DataSetTopic':'fueloutput','DataSourceID':'qykafka'},'IsCheckpoint':false,'StreamProjectID':'fuelconsumption','StreamProjectName':'油耗统计项目'}" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamProjectInit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CreateRMQJson" />
+      <item itemvalue="Application.RunProject" />
+      <item itemvalue="Application.CreatKafkaJson" />
+      <item itemvalue="Application.CreateSimpleInput" />
+      <item itemvalue="Application.IOTDBSinkTest" />
+      <item itemvalue="Application.ReadKafkaJson2 (1)" />
+      <item itemvalue="Application.ReadKafkaJson2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CreatKafkaJson" />
+        <item itemvalue="Application.ReadKafkaJson2 (1)" />
+        <item itemvalue="Application.ReadKafkaJson2" />
+        <item itemvalue="Application.IOTDBSinkTest" />
+        <item itemvalue="Application.CreateSimpleInput" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dac36d3-80f5-4c01-a03f-426c49a29374" name="Default Changelist" comment="" />
+      <created>1561948985800</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561948985800</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8330976" visible="true" weight="0.2580429" />
+      <window_info id="Structure" order="1" sideWeight="0.18242122" side_tool="true" weight="0.3230563" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.16690241" side_tool="true" weight="0.39745307" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.37482318" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.39745402" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49932975" weight="0.35643566" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.3847242" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32956153" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="11" weight="0.32956153" />
+      <window_info anchor="bottom" id="Statistic" order="12" weight="0.32956153" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.3297587" />
+      <window_info anchor="right" id="Maven" order="8" weight="0.25134048" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8330976" visible="true" weight="0.2580429" />
+      <window_info id="Structure" order="1" sideWeight="0.18242122" side_tool="true" weight="0.3230563" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.16690241" side_tool="true" weight="0.39745307" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.37482318" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.12588401" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49932975" weight="0.042432815" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.3847242" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32956153" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="11" weight="0.32956153" />
+      <window_info anchor="bottom" id="Statistic" order="12" weight="0.32956153" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.3297587" />
+      <window_info anchor="right" id="Maven" order="8" weight="0.25134048" />
+    </layout-to-restore>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1131" y="592" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1625147487322">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1131" y="592" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1625147487322" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/MtnAlgTest2-1.0-SNAPSHOT-jar-with-dependencies(1).jar!/rcsdk/test/MtnAlgTest2.class</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/MtnAlgTest2-1.0-SNAPSHOT-jar-with-dependencies(2).jar!/rcsdk/test/MtnAlgTest2.class</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.8.2/flink-core-1.8.2.jar!/org/apache/flink/api/common/typeutils/base/MapSerializerSnapshot.class</url>
+          <properties />
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../testcase7/target/testcase7-1.0-SNAPSHOT-jar-with-dependencies.jar!/rtcf/test/test1.class</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamTest/readXMLTest.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/IotDBStorage-1.0-SNAPSHOT.jar!/IotDBStorage.class</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../failurediag/target/failurediag-1.0-SNAPSHOT.jar!/failurediag.class</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../decode/target/decode-1.0-SNAPSHOT.jar!/StreamDecode.class</url>
+          <line>129</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../testcase7/target/testcase7-1.0-SNAPSHOT.jar!/rtcf/test/storeCase.class</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../testcase7/target/testcase7-1.0-SNAPSHOT.jar!/rtcf/test/storeCase.class</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamTest/test.java</url>
+          <line>13</line>
+          <properties />
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/failurediag-1.0-SNAPSHOT.jar!/failurediag.class</url>
+          <line>239</line>
+          <properties />
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/failurediag-1.0-SNAPSHOT.jar!/failurediag.class</url>
+          <line>381</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Desktop/failurediag-1.0-SNAPSHOT.jar!/failurediag.class</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../testcase7/target/testcase7-1.0-SNAPSHOT.jar!/rtcf/test/decodeStore.class</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamTest/GetTaskInfoTest.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/SAlgFromBA.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamCal/PacketCalResult.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamCal/StreamCal.java</url>
+          <line>210</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/StreamDataset.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((UserFacingMapState)state2).originalState" custom="org.apache.flink.runtime.state.UserFacingMapState" />
+        <watch expression="streamTask" />
+        <watch expression="this" />
+        <watch expression="this.dataSourceIp" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/StreamProject$ReadKafkaJson2.ic" NAME="ReadKafkaJson2 Coverage Results" MODIFIED="1602814576350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>StreamTest.FailurediagTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/StreamProject$SinkTest.ic" NAME="SinkTest Coverage Results" MODIFIED="1563882134470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>StreamTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/StreamProject$LoadcacheTest.ic" NAME="LoadcacheTest Coverage Results" MODIFIED="1570516889976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>StreamTest.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="filteringbyte[]">
+      <expression>
+        <expression-string>byte[215]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>stateResponse.content</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new String(stateResponse.content)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>DatatypeConverter.printHexBinary(stateResponse.content)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>javax.xml.bind.DatatypeConverter</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stateResponse.content.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((byte[])this.content)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>byte[]</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/GetTaskVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/ReadFromDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetInputStream/GetInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetInputStream/InputSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="109" selection-start-line="22" selection-start-column="109" selection-end-line="22" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka-base_2.12/1.9.1/flink-connector-kafka-base_2.12-1.9.1.jar!/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumerBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/parser/DefaultJSONParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="1364" selection-start-line="1364" selection-end-line="1364" />
+          <folding>
+            <element signature="e#53949#53950#0" expanded="true" />
+            <element signature="e#53996#53997#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/JSON.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="e#2684#2685#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1444">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamSink/IotDBSink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcinterface/rcinterface/BatchAlgInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcinterface/rcinterface/StreamAlgInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcinterface/rcinterface/RealTimeInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/BatchAlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="58" column="108" selection-start-line="58" selection-start-column="108" selection-end-line="58" selection-end-column="108" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka_2.12/1.9.1/flink-connector-kafka_2.12-1.9.1.jar!/org/apache/flink/streaming/connectors/kafka/FlinkKafkaProducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-connector-kafka_2.12/1.9.1/flink-connector-kafka_2.12-1.9.1.jar!/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamProjectInit/GetProjectInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/FutureTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../testcase7/target/testcase7-1.0-SNAPSHOT.jar!/rtcf/test/fuelconsumeb.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/SAlgFromBA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/AnalyInputPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="63" column="73" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/StreamAlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/PacketCalResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/RMQSinkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/StreamCal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="104" column="84" selection-start-line="104" selection-start-column="84" selection-end-line="104" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/ModifyMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="79" column="57" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamSink/IotDBBatchSink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.12/1.9.1/flink-streaming-java_2.12-1.9.1.jar!/org/apache/flink/streaming/api/operators/StreamFlatMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/JarInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/DataTypeChange/MapJS2Datatype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/SubClassDataType/JsonList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamSink/KafkaOverrideSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamSink/StreamSink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="50" column="123" selection-start-line="50" selection-start-column="123" selection-end-line="50" selection-end-column="123" />
+          <folding>
+            <element signature="e#2576#6642#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/fuelconsume/CreatKafkaJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="39" column="65" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/CreatKafkaJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/RCProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/StreamDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/UserAlgTimeControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-722">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetInputStream/KafkaSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/TimeWindowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/fuelconsume/ReadKafkaJson2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamCal/GetUserAlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="method#getUserAlg#0;class#GetUserAlg#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/thss/rcsdk/WindowAlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/UserJarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding>
+            <element signature="method#init#0;class#UserJarTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamProjectInit/RunProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2014">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/StorageTest/IOTDBSinkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/GetTaskInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/GetBroadcastStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamInput/GetBroadStream/BroadcastSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2128">
+          <caret line="124" column="60" selection-start-line="124" selection-start-column="60" selection-end-line="124" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamTest/FailurediagTest/ReadKafkaJson2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StreamDataPacket/BaseClassDataType/TaskState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>StreamProject</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>

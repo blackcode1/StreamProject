@@ -4,16 +4,51 @@ import StreamDataPacket.BaseClassDataType.TransPacketRely.*;
 import StreamDataPacket.DataTypeChange.*;
 import StreamDataPacket.DataType;
 import edu.thss.entity.ParsedDataPacket;
-import edu.thss.entity.RawDataPacket;
-import edu.thss.entity.TransPacket;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import ty.pub.RawDataPacket;
+import ty.pub.RawPacketDecoder;
+import ty.pub.TransPacket;
 
 import java.util.Properties;
 
 public class KafkaSource {
+
+    public static DataStream<DataType> getKafkaStream
+            (StreamExecutionEnvironment env, String dataType, String ip, String port, String gropID, String topicName
+                    , String pid, String datasetID, Long startt){
+        if(dataType.equals("JSONObject")){
+            return env.addSource(getKafkaJsonConsumer(ip, port, gropID, topicName, startt))
+                    .map(new MapJS2Datatype(pid))
+                    .map(new ADDDatatyeSource(datasetID));
+        }
+        else if(dataType.equals("TransPacket")){
+
+        }
+        else if(dataType.equals("RawDataPacket")){
+
+        }
+        else if(dataType.equals("ParsedDataPacket")){
+
+        }
+        return null;
+    }
+
+    public static FlinkKafkaConsumer<String> getKafkaJsonConsumer(String ip, String port, String gropID, String topicName, Long startt) {
+        Properties kafkaConfig = new Properties();
+        kafkaConfig.setProperty("bootstrap.servers", ip+":"+port);
+        kafkaConfig.setProperty("group.id", gropID);
+        kafkaConfig.setProperty("default.api.timeout.ms", "5000");
+        kafkaConfig.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaConfig.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        FlinkKafkaConsumer<String> kafkaConsumer = new FlinkKafkaConsumer<String>(topicName, new SimpleStringSchema(), kafkaConfig);
+        if(startt != 0){
+            kafkaConsumer.setStartFromTimestamp(startt);
+        }
+        return kafkaConsumer;
+    }
 
     public static DataStream<DataType> getKafkaStream
             (StreamExecutionEnvironment env, String dataType, String ip, String port, String gropID, String topicName

@@ -8,6 +8,7 @@ import StreamDataPacket.SubClassDataType.DBStore.DBStore;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
+import ty.pub.TransPacket;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

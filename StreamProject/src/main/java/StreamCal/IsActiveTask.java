@@ -18,7 +18,7 @@ public class IsActiveTask {
         if(!isLive(taskInfoPacket, streamTask)){
             return false;
         }
-        //当前工况的设备ID不在任务的设备ID列表中
+        //当前工况的来源数据集ID不在任务的输入数据集ID过滤列表中
         List<String> inputTopicList = streamTask.inputTopicTest;
         if(!inputTopicList.get(0).equals("*") && !inputTopicList.contains(datasetID)){
             return false;
